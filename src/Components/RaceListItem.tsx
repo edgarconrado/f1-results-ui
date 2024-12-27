@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     shadowRadius: 1.0
   },
   date: {
-
+    fontFamily: 'F1-Regular'
   },
   datesContainer: {
     padding: 10,
@@ -58,15 +58,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
     color: 'dimgray',
-    fontWeight: 'bold',
     marginTop: 5,
+    fontFamily: 'F1-Bold'
   },
   round: {
     color: Colors.primary,
+    fontFamily: 'F1-Regular'
   },
   country: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'F1-Bold'
   },
   raceDescription: {
     color: 'dimgray',
