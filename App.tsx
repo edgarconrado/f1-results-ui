@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import racesResponse from './assets/data/races.json';
 import RaceListItem from './src/Components/RaceListItem';
+import dayjs from 'dayjs';
 
 const races = racesResponse.data.races.response;
 
@@ -16,16 +17,18 @@ export default function App() {
     'F1-Wide': require('./assets/fonts/Formula1-Wide.ttf'),
   });
 
-  if(!fontsLoaded)
+  if (!fontsLoaded)
     return <ActivityIndicator />
 
-  console.log(fontsLoaded);
-  
+  const sortedRaces = races.sort((r1, r2) =>
+    dayjs(r2.date).diff(dayjs(r1.date))
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={races}
-        renderItem={({ item }) => <RaceListItem item={item} />}
+        data={sortedRaces}
+        renderItem={({ item, index }) => <RaceListItem item={item} round={sortedRaces.length - index} />}
       />
 
       <StatusBar style="auto" />

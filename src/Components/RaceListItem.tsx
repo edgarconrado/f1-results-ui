@@ -2,21 +2,33 @@ import { Entypo } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors } from '../Constans/Colors';
 
+import dayjs from 'dayjs';
 import racesResponse from '../../assets/data/races.json';
+
 const races = racesResponse.data.races.response;
 
-export default function RaceListItem({ item }: { item: (typeof races)[0] }) {
+export default function RaceListItem({
+  item,
+  round
+}: {
+  item: (typeof races)[0];
+  round: number
+}) {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.datesContainer}>
-        <Text style={styles.date}>03-05</Text>
-        <Text style={styles.month}>Nov</Text>
+        <Text style={styles.date}>
+          {dayjs(item.date).subtract(2, 'days').format('DD')}
+          -
+          {dayjs(item.date).format('DD')}
+        </Text>
+        <Text style={styles.month}>{dayjs(item.date).format('MMM')}</Text>
       </View>
 
       <View style={{ flex: 1 }}>
-        <Text style={styles.round}>Round 21</Text>
+        <Text style={styles.round}>Round {round}</Text>
         <Text style={styles.country}>{item.competition.location.country}</Text>
-        <Text style={styles.raceDescription}>Formula 1 {item.competition.name} 2023</Text>
+        <Text style={styles.raceDescription}>Formula 1 {item.competition.name} {item.season}</Text>
       </View>
 
       <Entypo name='chevron-right' size={24} color={Colors.primary} />
