@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { Link } from 'expo-router';
+import { Link, Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, StyleSheet, View } from 'react-native';
 import racesResponse from '../../assets/data/races.json';
@@ -17,7 +17,6 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
 
-      <Link href={'/about'}>about</Link>
       <FlatList
         data={sortedRaces}
         renderItem={({ item, index }) => <RaceListItem item={item} round={sortedRaces.length - index} />}
