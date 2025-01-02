@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import React from 'react';
 import { ActivityIndicator } from "react-native";
 import { Colors } from "../Constans/Colors";
+import ApolloClientProvider from "../providers/ApolloClientProvider";
 
 
 export default function RootLayout() {
@@ -22,7 +23,7 @@ export default function RootLayout() {
 
   return (
 
-    <>
+    <ApolloClientProvider>
       <Stack screenOptions={{
         headerStyle: { backgroundColor: Colors.primary },
         headerTitleStyle: { color: 'white', fontFamily: 'F1-Bold' },
@@ -34,6 +35,6 @@ export default function RootLayout() {
 
       <StatusBar style="light"/>
 
-    </>
+    </ApolloClientProvider>
   )
 }
