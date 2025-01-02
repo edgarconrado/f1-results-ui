@@ -35,8 +35,6 @@ const race = () => {
   }
 
   const raceRankings = data?.raceRankings.response;
-  console.log( raceRankings);
-  
 
   if (!raceRankings) {
     return <Text>Race not found!</Text>;

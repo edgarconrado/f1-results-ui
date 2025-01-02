@@ -24,6 +24,8 @@ export default function RaceLayout() {
             }}
             >
                 <TopTabs.Screen name='index' options={{ title: 'Details' }} />
+                <TopTabs.Screen name='race' options={{ title: 'Race' }} />
+                <TopTabs.Screen name='qualifying' options={{ title: 'Qualifying' }} />
             </TopTabs>
         </>
     );
