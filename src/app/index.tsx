@@ -1,10 +1,10 @@
 import { gql, useQuery } from '@apollo/client';
+import { Picker } from '@react-native-picker/picker'; // Asegúrate de instalar esta librería si no la tienes
 import dayjs from 'dayjs';
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
 import RaceListItem from '../Components/RaceListItem';
-import { Picker } from '@react-native-picker/picker'; // Asegúrate de instalar esta librería si no la tienes
-import { useState } from 'react';
 
 
 // const races = racesResponse.data.races.response;

@@ -6,6 +6,8 @@ import { Colors } from '../../../Constans/Colors';
 const Tab = createMaterialTopTabNavigator();
 const TopTabs = withLayoutContext(Tab.Navigator);
 
+const shouldShowQualifyingTab = false; // Cambia a true si necesitas mostrarla
+
 export default function RaceLayout() {
     return (
         <>
@@ -25,7 +27,6 @@ export default function RaceLayout() {
             >
                 <TopTabs.Screen name='index' options={{ title: 'Details' }} />
                 <TopTabs.Screen name='race' options={{ title: 'Race' }} />
-                <TopTabs.Screen name='qualifying' options={{ title: 'Qualifying' }} />
             </TopTabs>
         </>
     );
